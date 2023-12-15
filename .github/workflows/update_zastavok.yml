@@ -36,7 +36,13 @@ jobs:
     - name: download requirements
       run: pip install bs4 unidecode requests
       shell: sh
+
+    - name: open directory
+      run: |
+        ls -la
+        cd ./src/webclient
+        ls -la
       
     - name: run python
-      run: python ${{ env.DEVOPS_DIR }}/zastavka.py
+      run: python zastavka.py
       shell: sh
