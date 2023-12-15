@@ -8,6 +8,8 @@ url = "http://www.imhd.sk/ba/online-zastavkova-tabula?st="
 
 i = 0
 
+file1 = open("index_new.html", "w") 
+
 #pridali nove zastavky > 4000
 while i < 5000:
 
@@ -23,7 +25,7 @@ while i < 5000:
 
     if text == '[]':
 
-        print('')
+        file1.write('')
 
         i = i + 1
 
@@ -49,4 +51,6 @@ while i < 5000:
         li = '<li><a href="' + link + '"><strong class="name">' + lowercase + '</strong>' + title \
              + '</a></li>'
 
-        print(li)
+        file1.write(li)
+
+file1.close()
