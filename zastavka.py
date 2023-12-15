@@ -9,9 +9,10 @@ index_file_end = "</body></html>"
 
 url = "http://www.imhd.sk/ba/online-zastavkova-tabula?st="
 
-
 file1 = open("index_new.html", "w", encoding="utf-8")
 file1.write(index_file_start)
+
+i = 0
 
 while i < 594:
 
