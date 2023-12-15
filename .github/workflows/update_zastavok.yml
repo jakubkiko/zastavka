@@ -40,7 +40,7 @@ jobs:
     - name: open directory
       run: |
         ls -la
-        cd ./src/webclient
+        cd ./src/zastavka
         ls -la
       
     - name: run python
