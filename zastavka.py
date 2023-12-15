@@ -4,11 +4,15 @@ import codecs
 import unidecode
 import re
 
+index_file_start = "<!DOCTYPE html><html><head><meta http-equiv='content-type' content='text/html; charset=UTF-8'><title>Zastavka</title><link rel='stylesheet' href='style.css'><script src='search.js' type='text/javascript'/></head><body><div id='header'><div class='input'><input placeholder='Hľadaj zastávku...' type='text' id='input'/><div id='searchclear' onmousedown='input.value='';'><b>x</b></div></div></div><ul><li><a href='https://imhd.sk/ba/online-zastavkova-tabula?theme=darkblue&st=%3B%3B%3B'><strong class='name'/>4 Najbližšie zastávky</a></li><!-- odkazy na zastavky -->"
+index_file_end = "</body></html>"
+
 url = "http://www.imhd.sk/ba/online-zastavkova-tabula?st="
 
 i = 0
 
-file1 = open("index_new.html", "w") 
+file1 = open("index_new.html", "w")
+file1.write(index_file_start)
 
 #pridali nove zastavky > 4000
 while i < 5000:
@@ -53,4 +57,5 @@ while i < 5000:
 
         file1.write(li)
 
+file1.write(index_file_end)
 file1.close()
