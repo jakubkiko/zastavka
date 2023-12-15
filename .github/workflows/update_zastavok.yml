@@ -42,10 +42,10 @@ jobs:
         mv index.html index_old.html
         mv index_new.html index.html
 
-    - name: Git Submodule Update
-      run: |
-        git pull --recurse-submodules
-        git submodule update --remote --recursive
+#    - name: Git Submodule Update
+#      run: |
+#        git pull --recurse-submodules
+#        git submodule update --remote --recursive
 
     - name: Commit update
       run: |
