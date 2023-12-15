@@ -31,4 +31,4 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       #run: echo "Hello ${{ inputs.name }}"
-      run: pip install bs4 unidecode requests && python ${GITHUB_WORKSPACE}/zastavka.py
+      run: pip install bs4 unidecode requests && python zastavka.py
