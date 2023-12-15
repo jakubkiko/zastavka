@@ -40,9 +40,10 @@ jobs:
     - name: open directory && run python
       run: |
         ls -la
-        pip install requirements.txt
+        pip install -r requirements.txt
         python zastavka.py
-        rm index.html
+        rm index_old.html
+        mv index.html index_old.html
         mv index_new.html index.html
 
     - name: commit changes
