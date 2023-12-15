@@ -46,7 +46,7 @@ while i < 5000:
 
         lowercase = re.sub('[^A-Za-z0-9 ]+', '', lowercase)
 
-        li = '<li><a href="https://nullreferer.com?' + link + '"><strong class="name">' + lowercase + '</strong>' + title \
+        li = '<li><a href="' + link + '"><strong class="name">' + lowercase + '</strong>' + title \
              + '</a></li>'
 
         print(li)
