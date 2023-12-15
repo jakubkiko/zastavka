@@ -10,25 +10,33 @@ on:
     inputs:
       name:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
+        description: 'updates index.html with latest links'
         # Default value if no value is explicitly provided
         default: 'World'
         # Input has to be provided for the workflow to run
-        required: true
+        required: false
         # The data type of the input
         type: string
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-  # This workflow contains a single job called "greet"
   python:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      #run: echo "Hello ${{ inputs.name }}"
-      run: pip install bs4 unidecode requests && python zastavka.py
+
+    - name: Check-out devops repository
+      uses: actions/checkout@v2
+      with:
+        repository: jakubkiko/zastavka
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: ${{ env.DEVOPS_DIR }}
+    
+    - name: download requirements
+      run: pip install bs4 unidecode requests
+      shell: sh
+      
+    - name: run python
+      run: ${{ env.DEVOPS_DIR }}/zastavka.py
+      shell: sh
