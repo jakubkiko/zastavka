@@ -40,4 +40,11 @@ jobs:
     - name: open directory && run python
       run: |
         ls -la
+        pip install requirements.txt
         python zastavka.py
+        rm index.html
+        mv index_new.html index.html
+
+    - name: commit changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+
