@@ -38,7 +38,7 @@ jobs:
         ls -la
         pip install -r requirements.txt
         python zastavka.py
-        rm index_old.html
+        rm -f -- index_old.html
         mv index.html index_old.html
         mv index_new.html index.html
 
