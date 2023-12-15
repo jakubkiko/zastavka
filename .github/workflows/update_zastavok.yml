@@ -32,10 +32,6 @@ jobs:
         repository: jakubkiko/zastavka
         token: ${{ secrets.GITHUB_TOKEN }}
         path: ${{ env.DEVOPS_DIR }}
-    
-    - name: download requirements
-      run: pip install bs4 unidecode requests
-      shell: sh
 
     - name: open directory && run python
       run: |
