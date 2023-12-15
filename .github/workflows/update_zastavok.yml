@@ -37,12 +37,7 @@ jobs:
       run: pip install bs4 unidecode requests
       shell: sh
 
-    - name: open directory
+    - name: open directory && run python
       run: |
         ls -la
-        cd ./src/zastavka
-        ls -la
-      
-    - name: run python
-      run: python zastavka.py
-      shell: sh
+        python zastavka.py
