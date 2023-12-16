@@ -11,3 +11,4 @@ input.onkeyup = function () {
             lis[i].style.display = 'none';
     }
 }
+}
