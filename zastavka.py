@@ -11,7 +11,7 @@ file1 = open("index_new.html", "w", encoding="utf-8")
 
 i = 0
 
-while i < 594:
+while i < 5000:
 
     link = url + str(i)
 
