@@ -29,8 +29,6 @@ while i < 5000:
 
     else:
 
-        i = i + 1
-
         text = text.replace('[<div class="float-left" id="stop-name">', '')
 
         text = text.replace(' </div>]', '')
@@ -51,6 +49,8 @@ while i < 5000:
 
         index_html += li
         print(li)
+
+        i = i + 1
 
 index_html += "</ul></body></html>"
 
