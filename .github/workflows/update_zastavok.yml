@@ -32,6 +32,9 @@ jobs:
         repository: jakubkiko/zastavka
         token: ${{ secrets.GITHUB_TOKEN }}
         path: ${{ env.DEVOPS_DIR }}
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
 
     - name: open directory && run python
       run: |
