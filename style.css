@@ -53,6 +53,13 @@
 		align-items: center;
 		justify-content: space-around;
 	  }
+
+	  .bottom-nav__item:nth-child(even) {
+	
+		border-left: 1px solid rgba(255,255,255,.3);
+		border-right: 1px solid rgba(255,255,255,.3);
+
+	  }
 	  
 	  .bottom-nav__item {
 		text-decoration: none;
